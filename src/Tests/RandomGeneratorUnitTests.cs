@@ -1,6 +1,6 @@
 ﻿using System;
+using DogStatsdClient;
 using NUnit.Framework;
-using StatsdClient;
 
 namespace Tests
 {
@@ -15,7 +15,7 @@ namespace Tests
             RandomGenerator randomGenerator = new RandomGenerator();
             for (int i = 0; i < NumberOfTestsRan; i++)
             {
-                Assert.True(randomGenerator.ShouldSend(1));                
+                Assert.True(randomGenerator.ShouldSend(1));
             }
         }
 

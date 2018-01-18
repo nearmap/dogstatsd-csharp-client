@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using System.Net.Sockets;
+using DogStatsdClient;
 using NUnit.Framework;
-using StatsdClient;
 
 namespace Tests
 {

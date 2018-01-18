@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StatsdClient
+namespace DogStatsdClient
 {
     public enum Status
     {

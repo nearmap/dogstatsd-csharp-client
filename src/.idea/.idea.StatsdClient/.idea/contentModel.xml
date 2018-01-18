@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2017.2/resharper-host/local/Transient/ReSharperHost/v10/SolutionCaches/_StatsdClient.1226457142.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Configuration" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Naming.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="StatsdClient.Configuration.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="StatsdClient" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Dogstatsd.cs" t="Include" />
+        <e p="ICommandType.cs" t="Include" />
+        <e p="IRandomGenerator.cs" t="Include" />
+        <e p="IStatsd.cs" t="Include" />
+        <e p="IStatsdUDP.cs" t="Include" />
+        <e p="IStopwatch.cs" t="Include" />
+        <e p="IStopWatchFactory.cs" t="Include" />
+        <e p="MetricsTimer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="RandomGenerator.cs" t="Include" />
+        <e p="Statsd.cs" t="Include" />
+        <e p="StatsdClient.csproj" t="IncludeRecursive" />
+        <e p="StatsdConfig.cs" t="Include" />
+        <e p="StatsdUDP.cs" t="Include" />
+        <e p="Stopwatch.cs" t="Include" />
+        <e p="StopWatchFactory.cs" t="Include" />
+        <e p="ThreadSafeRandom.cs" t="Include" />
+      </e>
+      <e p="StatsdClient.sln" t="IncludeFlat" />
+      <e p="Tests" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CommandIntegrationTests.cs" t="Include" />
+        <e p="IPV4ParsingTests.cs" t="Include" />
+        <e p="NamingIntegrationTests.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="RandomGeneratorUnitTests.cs" t="Include" />
+        <e p="StatsdClient.Tests.csproj" t="IncludeRecursive" />
+        <e p="StatsdConfigurationTests.cs" t="Include" />
+        <e p="StatsdThreadingTests.cs" t="Include" />
+        <e p="StatsdUDPTests.cs" t="Include" />
+        <e p="StatsdUnitTests.cs" t="Include" />
+        <e p="UdpListener.cs" t="Include" />
+        <e p="UDPSmokeTests.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

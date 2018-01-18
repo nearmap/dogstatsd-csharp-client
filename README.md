@@ -1,3 +1,10 @@
+# Nearmap #
+
+Fork of DogStatsD for C#, in order to solve an assembly clash with the original StatsdClient for C# (i.e. for regular statsd). This allows a C# project to reference both the DogStatsD and StatsdClient assemblies side-by-side.
+
+## Changes
+The assembly name and root namespace has been changed to `DogStatsdClient`.
+
 # DogStatsD for C#
 
 [![Build status](https://ci.appveyor.com/api/projects/status/bg8e39b5f9iiavvj/branch/master?svg=true)](https://ci.appveyor.com/project/Datadog/dogstatsd-csharp-client/branch/master)
@@ -20,7 +27,7 @@ At start of your app, configure the `DogStatsd` class like this:
 
 ``` C#
 // The code is located under the StatsdClient namespace
-using StatsdClient;
+using DogStatsdClient;
 
 // ...
 
@@ -108,7 +115,7 @@ one UDP message (via the `Add` method).
 
 ``` C#
 // The code is located under the StatsdClient namespace
-using StatsdClient;
+using DogStatsdClient;
 
 // ...
 

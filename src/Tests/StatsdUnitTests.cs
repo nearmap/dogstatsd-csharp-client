@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Threading;
+using DogStatsdClient;
 using NUnit.Framework;
 using Rhino.Mocks;
-using StatsdClient;
 
 namespace Tests
 {

@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-
+using DogStatsdClient;
 using NUnit.Framework;
-
-using StatsdClient;
 
 namespace Tests
 {

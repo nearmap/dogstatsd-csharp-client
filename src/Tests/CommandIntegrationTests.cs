@@ -2,8 +2,8 @@
 using System.Configuration;
 using System.Threading;
 using System.Text.RegularExpressions;
+using DogStatsdClient;
 using NUnit.Framework;
-using StatsdClient;
 using Tests.Helpers;
 
 
@@ -22,7 +22,7 @@ namespace Tests
         {
             udpListener = new UdpListener(serverName, serverPort);
             var metricsConfig = new StatsdConfig { StatsdServerName = serverName, StatsdPort = serverPort};
-            StatsdClient.DogStatsd.Configure(metricsConfig);
+            DogStatsd.Configure(metricsConfig);
         }
 
         [TestFixtureTearDown]

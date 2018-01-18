@@ -1,6 +1,4 @@
-using System;
-
-namespace StatsdClient
+namespace DogStatsdClient
 {
     public class RandomGenerator : IRandomGenerator
     {

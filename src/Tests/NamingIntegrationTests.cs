@@ -1,4 +1,4 @@
-﻿using StatsdClient.Configuration;
+﻿using DogStatsdClient.Configuration;
 using NUnit.Framework;
 
 namespace Tests

@@ -2,9 +2,8 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Collections.Generic;
 
-namespace StatsdClient
+namespace DogStatsdClient
 {
     public class StatsdUDP : IDisposable, IStatsdUDP
     {

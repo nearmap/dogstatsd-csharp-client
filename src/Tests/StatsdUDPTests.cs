@@ -2,8 +2,8 @@ using System;
 using System.Configuration;
 using System.Threading;
 using System.Collections.Generic;
+using DogStatsdClient;
 using NUnit.Framework;
-using StatsdClient;
 using Tests.Helpers;
 
 
@@ -27,7 +27,7 @@ namespace Tests
         {
             udpListener = new UdpListener(serverName, serverPort);
             var metricsConfig = new StatsdConfig { StatsdServerName = serverName };
-            StatsdClient.DogStatsd.Configure(metricsConfig);
+            DogStatsd.Configure(metricsConfig);
             udp = new StatsdUDP(serverName, serverPort);
             statsd = new Statsd(udp);
         }
@@ -91,7 +91,7 @@ namespace Tests
             var msg = new String('f', StatsdConfig.DefaultStatsdMaxUDPPacketSize);
             listenThread.Start();
             udp.Send(msg);
-            // As long as we're at or below the limit, the packet should still be sent 
+            // As long as we're at or below the limit, the packet should still be sent
             AssertWasReceived(msg);
         }
 
