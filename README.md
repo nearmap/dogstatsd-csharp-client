@@ -1,6 +1,6 @@
 # Nearmap #
 
-Fork of DogStatsD for C#, in order to solve an assembly clash with the original StatsdClient for C# (i.e. for regular statsd). This allows a C# project to reference both the DogStatsD and StatsdClient assemblies side-by-side.
+Fork of DogStatsD for C#, in order to solve assembly and namespace clashes with the original StatsdClient for C# (i.e. for regular statsd). This allows a C# project to reference both the DogStatsD and StatsdClient assemblies side-by-side.
 
 ## Changes
 The assembly name and root namespace has been changed to `DogStatsdClient`.
@@ -205,12 +205,12 @@ Build it first. See above.
 
 1. Build the NuGet package
   ```
-  mono lib/NuGet.exe pack src/StatsdClient/StatsdClient.nuspec -Version '<version>' -BasePath <path>/src/StatsdClient -IncludeReferencedProjects
+  mono lib/NuGet.exe pack src/StatsdClient/StatsdClient.nuspec -BasePath <path>/src/StatsdClient -IncludeReferencedProjects
   ```
 
 2. Publish the NuGet package
   ```
-  curl -v --fail -s -S -X PUT -H "X-NuGet-ApiKey:<secretkey>" -F package=@DogStatsD-CSharp-Client.<version>.nupkg http://nuget.development.nearmap.com/api/packages
+  mono lib/NuGet.exe push Nearmap.DogStatsD-CSharp-Client.2.2.1.nupkg -ApiKey <secretkey> -Source http://nuget.development.nearmap.com/api/packages
   ``` 
 
 ## Feedback
