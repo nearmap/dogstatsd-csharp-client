@@ -7,8 +7,6 @@ The assembly name and root namespace has been changed to `DogStatsdClient`.
 
 # DogStatsD for C#
 
-[![Build status](https://ci.appveyor.com/api/projects/status/bg8e39b5f9iiavvj/branch/master?svg=true)](https://ci.appveyor.com/project/Datadog/dogstatsd-csharp-client/branch/master)
-
 A C# [DogStatsD](http://docs.datadoghq.com/guides/dogstatsd/) client. DogStatsD
 is an extension of the [StatsD](http://codeascraft.com/2011/02/15/measure-anything-measure-everything/)
 metric server for [Datadog](http://datadoghq.com).
@@ -182,24 +180,12 @@ timing, a timer metric containing the time elapsed before the exception
 occurred will be sent or added to the send queue (depending on whether Send or
 Add is being called).
 
-## Testing
-
-### on Windows
-
-1. Build the project
-  ```
-  msbuild src/StatsdClient.sln /p:Configuration=Release /t:Rebuild
-  ```
-
-2. Run tests using NUnit-Console runner
-  ```
-  nunit-console src/Tests/bin/Release/Tests.dll --config=Release
-  ```
+## Build & Test
 
 ### on Linux, OS X
 
 _Requirements:_
-_* Mono JIT compiler (tested with version 4.6.0)_
+_* Mono JIT compiler (tested with version 4.8)_
 
 1. Build the project
   ```
@@ -211,8 +197,21 @@ _* Mono JIT compiler (tested with version 4.6.0)_
   nunit-console src/Tests/bin/Release/Tests.dll --config=Release
   ```
 
+## Publish to the Nearmap NuGet Repository
 
+Build it first. See above.
 
+### on Linux, OS X
+
+1. Build the NuGet package
+  ```
+  mono lib/NuGet.exe pack ./src/StatsdClient/StatsdClient.nuspec  -Prop "Configuration=Release;GitBranch=nearmap-2.x;GitSha=<sha>" -Version '<version>' -BasePath <path>/src/StatsdClient -IncludeReferencedProjects
+  ```
+
+2. Publish the NuGet package
+  ```
+  curl -v --fail -s -S -X PUT -H "X-NuGet-ApiKey:<secretkey>" -F package=@DogStatsD-CSharp-Client.<version>-sha-<sha>.nupkg http://nuget.development.nearmap.com/api/packages
+  ``` 
 
 ## Feedback
 
