@@ -205,7 +205,7 @@ Build it first. See above.
 
 1. Build the NuGet package
   ```
-  mono lib/NuGet.exe pack ./src/StatsdClient/StatsdClient.nuspec  -Prop "Configuration=Release;GitBranch=nearmap-2.x;GitSha=<sha>" -Version '<version>' -BasePath <path>/src/StatsdClient -IncludeReferencedProjects
+  mono lib/NuGet.exe pack src/StatsdClient/StatsdClient.nuspec  -Prop "Configuration=Release;GitBranch=nearmap-2.x;GitSha=<sha>" -Version '<version>' -BasePath <path>/src/StatsdClient -IncludeReferencedProjects
   ```
 
 2. Publish the NuGet package
