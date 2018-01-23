@@ -1,5 +1,5 @@
+using DogStatsdClient;
 using NUnit.Framework;
-using StatsdClient;
 
 namespace Tests
 {

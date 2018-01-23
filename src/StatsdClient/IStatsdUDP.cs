@@ -1,4 +1,4 @@
-namespace StatsdClient
+namespace DogStatsdClient
 {
     public interface IStatsdUDP
     {

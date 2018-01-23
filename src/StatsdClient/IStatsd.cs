@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace StatsdClient
+namespace DogStatsdClient
 {
     public interface IStatsd
     {
         List<string> Commands { get; }
-        void Send<TCommandType, T>(string name, T value, double sampleRate, params string[] tags) where TCommandType : StatsdClient.Statsd.Metric;
-        void Add<TCommandType, T>(string name, T value, double sampleRate, params string[] tags) where TCommandType : StatsdClient.Statsd.Metric;
+        void Send<TCommandType, T>(string name, T value, double sampleRate, params string[] tags) where TCommandType : Statsd.Metric;
+        void Add<TCommandType, T>(string name, T value, double sampleRate, params string[] tags) where TCommandType : Statsd.Metric;
         void Send(string title, string text, string alertType, string aggregationKey, string sourceType, int? dateHappened, string priority, string hostname, string[] tags, bool truncateIfTooLong = false);
         void Add(string title, string text, string alertType, string aggregationKey, string sourceType, int? dateHappened, string priority, string hostname, string[] tags);
         void Send(string command);

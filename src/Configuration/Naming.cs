@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace StatsdClient.Configuration
+namespace DogStatsdClient.Configuration
 {
     public static class Naming
     {
@@ -21,7 +21,7 @@ namespace StatsdClient.Configuration
 
         public static string withEnvironmentAndApplication(string statName)
         {
-            return string.Format("{0}.{1}.{2}", CurrentEnvironment, CurrentApplication, statName); 
+            return string.Format("{0}.{1}.{2}", CurrentEnvironment, CurrentApplication, statName);
         }
 
         public static string withEnvironmentApplicationAndHostname(string statName)

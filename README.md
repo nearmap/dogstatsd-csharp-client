@@ -1,6 +1,11 @@
-# DogStatsD for C#
+# Nearmap #
 
-[![Build status](https://ci.appveyor.com/api/projects/status/bg8e39b5f9iiavvj/branch/master?svg=true)](https://ci.appveyor.com/project/Datadog/dogstatsd-csharp-client/branch/master)
+Fork of DogStatsD for C#, in order to solve assembly and namespace clashes with the original StatsdClient for C# (i.e. for regular statsd). This allows a C# project to reference both the DogStatsD and StatsdClient assemblies side-by-side.
+
+## Changes
+The assembly name and root namespace has been changed to `DogStatsdClient`.
+
+# DogStatsD for C#
 
 A C# [DogStatsD](http://docs.datadoghq.com/guides/dogstatsd/) client. DogStatsD
 is an extension of the [StatsD](http://codeascraft.com/2011/02/15/measure-anything-measure-everything/)
@@ -20,7 +25,7 @@ At start of your app, configure the `DogStatsd` class like this:
 
 ``` C#
 // The code is located under the StatsdClient namespace
-using StatsdClient;
+using DogStatsdClient;
 
 // ...
 
@@ -108,7 +113,7 @@ one UDP message (via the `Add` method).
 
 ``` C#
 // The code is located under the StatsdClient namespace
-using StatsdClient;
+using DogStatsdClient;
 
 // ...
 
@@ -175,24 +180,12 @@ timing, a timer metric containing the time elapsed before the exception
 occurred will be sent or added to the send queue (depending on whether Send or
 Add is being called).
 
-## Testing
-
-### on Windows
-
-1. Build the project
-  ```
-  msbuild src/StatsdClient.sln /p:Configuration=Release /t:Rebuild
-  ```
-
-2. Run tests using NUnit-Console runner
-  ```
-  nunit-console src/Tests/bin/Release/Tests.dll --config=Release
-  ```
+## Build & Test
 
 ### on Linux, OS X
 
 _Requirements:_
-_* Mono JIT compiler (tested with version 4.6.0)_
+_* Mono JIT compiler (tested with version 4.8)_
 
 1. Build the project
   ```
@@ -204,8 +197,21 @@ _* Mono JIT compiler (tested with version 4.6.0)_
   nunit-console src/Tests/bin/Release/Tests.dll --config=Release
   ```
 
+## Publish to the Nearmap NuGet Repository
 
+Build it first. See above.
 
+### on Linux, OS X
+
+1. Build the NuGet package
+  ```
+  mono lib/NuGet.exe pack src/StatsdClient/StatsdClient.nuspec -BasePath <path>/src/StatsdClient -IncludeReferencedProjects
+  ```
+
+2. Publish the NuGet package
+  ```
+  mono lib/NuGet.exe push Nearmap.DogStatsD-CSharp-Client.2.2.1.nupkg -ApiKey <secretkey> -Source http://nuget.development.nearmap.com/api/packages
+  ``` 
 
 ## Feedback
 
